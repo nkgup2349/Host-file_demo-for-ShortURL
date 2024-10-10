@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 0;
+        background-image: url('/Image2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: yellow;
+        height: 100vh;
+      }
+      #hi_name{
+        font-style: oblique;
+        margin-left: 70px;
+        margin-top: 60px;
+        color: rgb(255, 225, 0);
+        height: 100px;
+        width: 85%;
+        font-family:I “Cascadia Code”;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      #hi_name a{
+        display: flex;
+        align-items: center;
+        color: rgb(187, 255, 0);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+      }
+      #Url_name{
+        display: flex;
+        font-size: 30px;
+        height: 90px;
+        width: 100%;
+        justify-content: center;
+      }
+      #to_coloum_make{
+        background-color: white;
+        height: 80%;
+        width: 00px;
+        display: flex ; 
+        justify-content: center;
+        align-items: center;
+      }
+      #hor_full_width{
+        height: 350px;
+        margin-top: 70px;
+        color: black;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      
+      input{
+        margin-top: 20px;
+        margin-left: 30px;
+        padding: 10px;
+        width: 180px;
+        height: 15px;
+        border-radius: 20px;
+        font-size: 15px;
+      }
+      button{
+        background-color: black;
+        color: yellow ; 
+        margin-left: 100px;
+        height: 30px;
+        margin-top: 25px;
+        width: 80px;
+        border-radius: 10px;
+      }
+      #URL_Generated_link{
+        margin-top: 40px;
+        padding-left: 20px;
+        height: 40px;
+        width: 250px;
+        color: yellow;
+      }
+      #div_to_consist_both_vertically{
+        height: 300px;
+        width: 250px;
+      }
+     #Enter_Your_Original_URL{
+      margin-top: 30px;
+      margin-left: -10px;
+      padding-top: 20px;
+      padding-left:7px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      height: 180px;
+      border-radius: 20px;
+      width: 270px;
+      font-size:23px;
+      font-style: oblique;
+      color: yellow;
+     }
+     #div_to_bagal_red_full_fill{
+      background-color:  rgba(6, 27, 60, 0.314);
+      width: 45%;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 30px;
+      filter: drop-shadow(0 0 10px black);
+      border: 2px solid black;
+     }
+     
+     #short_url_black_space{
+      margin-top: 60px;
+      height: auto;
+      background-image: url('/Image2.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: drop-shadow(0 -4mm 5mm rgb(9, 9, 24));
+        padding-bottom: 30px;
+     }
+     #to_show_short_url{
+      height: auto;
+      display: flex;
+      justify-content: center;
+     }
+     #History{
+      padding-left: 40px;
+      font-family:inherit ;
+      height: 100px;
+      display: flex;
+      align-items: center;
+     }
+    th{
+      padding-left: 40px;
+      padding-top: 5px;
+      color: rgb(149, 235, 9);
+      font-weight: 800 ;
+      font-size: 23px;
+     }
+     td{
+      padding-left: 40px;
+      padding-top: 5px;
+      font-size: 23px;
+      font-weight: 200 ;
+      color: rgb(255, 255, 255);
+     }
+     #footer_div{
+      margin-top: 4px;
+      height: auto;
+      width: 100%;
+      background-color: black;
+      
+     }
+     #contact_me{
+      padding-top: 20px;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 20px;
+      color: white;
+      justify-content: center;
+     }
+     #details_wala_outer_div{
+      height: 200px;
+      font-size: 10px;
+      display: flex;
+      justify-content: center;
+     }
+     #isme_mob_no_Git{
+      width: 250px;
+      padding-left:30px ;
+     }
+     a{
+      color: white;
+      text-decoration: none;
+     }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <body>
+
+    <div id="hi_name">
+    <% if (locals.Name) { %>
+     <h1>Hi! <%= Name %>...</h1>
+    <% } %>
+    <a href="/logout">LogOUT</a>
+  </div>
+    <div id="Url_name">
+      <h1>URL Shortener</h1>
+   </div>
+
+   <div id="hor_full_width"> 
+    <div id="div_to_bagal_red_full_fill">
+    <div id="div_to_consist_both_vertically">
+    <div id="URL_Generated_link">
+    <% if (locals.id) { %>
+    <p>URL Generated: http://localhost:8001/url/<%= id %></p>
+    <% } %>
+  </div>
+  <div id="Enter_Your_Original_URL">
+      <form method="POST" action="/url">
+        <label>Enter Your Original URL..</label>
+        <input type="text" name="url" placeholder="https://example.com" />
+        <button type="submit">Generate</button>
+      </form>
+    </div>
+  </div>
+  </div>
+</div> 
+
+<div id="short_url_black_space">
+  <div id="History">
+  <h1>History.....</h1>
+</div>
+  <div id="to_show_short_url">
+    <div style="margin-top: 30px">
+      <% if (locals.urls) { %>
+      <table>
+        <thead>
+          <th>S. No</th>
+          <th>ShortID</th>
+          <th>Redirect</th>
+          <th>Clicks</th>
+        </thead>
+        <tbody>
+          <% urls.forEach((url, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= url.shortId %></td>
+            <td><%= url.redirectURL %></td>
+            <td><%= url.visitHistory.length %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
+    </div>
+  </div>
+
+ <footer id="footer_div">
+  <div id="contact_me">
+    Contact me &#128525
+  </div>
+  <div id="details_wala_outer_div">
+    <div id="isme_mob_no_Git">
+    <h1>Mob NO : +91 9532060429</h1>
+    <h1>Gmail : <a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRvwTmCThTKtxnSqBstBmBKNNGthNqtRNPZTWtTgqPQbLVNccCmhDwLlQnSNBxVTkwXsBGq">nkgup2349@gmail.com</a></h1>
+    <h1>Linkdin : <a href="https://www.linkedin.com/in/nikhil-gupta-480777241/">nikhil-gupta-480777241</a></h1>
+    <h1>GitHub : <a href="https://github.com/nkgup2349">nkgup2349</a></h1>
+    
+  </div>
+</div>
+ </footer>
+  </body>
+</html>

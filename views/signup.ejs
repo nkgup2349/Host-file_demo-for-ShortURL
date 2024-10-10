@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-image: url('/Image2.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin:0;
+        background-color: black ; 
+        color:rgb(223, 251, 9); 
+      }
+      #most_outer_div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 700px;
+        width: 100%;
+      }
+      #input_box_bluewala
+      {
+        background-color:  rgba(3, 21, 48, 0.456);
+        height: 450px;
+        width: 45%;
+        border-radius: 30px;
+        border: 2px solid black;
+        box-shadow: 0 0  80px black;
+      }
+      #signup_name{
+        display: flex;
+        justify-content: center;
+      }
+      #input_dabba_1{
+        margin-top: 10px;
+        height: 280px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      #inout_dabba_2{
+        margin-left: -10px;
+        height: 200px;
+        width: 180px;
+        color:yellow;
+      }
+      #If_already_registered{
+        margin-bottom: 10px;
+        color: rgb(245, 3, 3);
+        width: 230px;
+        margin-left: -10px;
+        height: 20px;
+      }
+      input{
+        background-color: rgb(255, 255, 253);
+        width: 200px;
+        height:40px;
+        border-radius: 20px;
+        padding-left: 10px;
+      }
+      button{
+        color: rgb(223, 251, 9);
+        margin-top: 20px;
+        margin-left: 55px;
+        background-color: black;
+        height: 40px;
+        width: 100px;
+        border-radius: 15px;
+      }
+      #spaaan{
+        height: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        color: rgb(0, 0, 0);
+      }
+      a{
+        text-decoration: none;
+        color: rgb(21, 253, 5);
+      }
+      
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+  </head>
+  <body>
+
+    <div id="most_outer_div">
+      <div id="input_box_bluewala">
+        <div id="signup_name">
+          <h1>SignUP</h1>
+        </div>
+    <div id="input_dabba_1">
+      <div id="inout_dabba_2">
+        <div id="If_already_registered"><% if (locals.errorkahua) { %>
+         <%= errorkahua %>
+        <% } %></div>
+    <form action="/user" method="post">
+      <label>Full Name</label>
+      <input type="text" required name="name" placeholder="Enter your Name" />
+      <label>Email</label>
+      <input type="text" required name="email" placeholder="Enter your Email" />
+      <label>Password</label>
+      <input type="password" required name="password" placeholder="Enter your Password" />
+      <button type="submit">Signup</button>
+    </form>
+    <span id="spaaan">Already Registered:<a href="/login">LogIn</a></span>
+  </div>
+  </div>
+    </div>
+  </div>
+  </body>
+</html>
